@@ -6,7 +6,7 @@
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:44:00 by bna               #+#    #+#             */
-/*   Updated: 2021/03/31 01:09:39 by bna              ###   ########.fr       */
+/*   Updated: 2021/03/31 09:32:18 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	print_number(int is_positive, int index, char arr[])
 
 void	ft_putnbr(int nb)
 {
-	char arr[10];
-	int index;
-	int is_positive;
+	char	arr[10];
+	int		index;
+	int		is_positive;
 
 	is_positive = nb < 0 ? 0 : 1;
 	index = 0;

@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/30 00:12:19 by bna               #+#    #+#             */
-/*   Updated: 2021/03/31 16:25:46 by bna              ###   ########.fr       */
+/*   Created: 2021/03/31 14:00:59 by bna               #+#    #+#             */
+/*   Updated: 2021/03/31 14:48:38 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	ft_print_combn(int n);
-
-int		main(void)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	ft_print_combn(0);
-	printf("\n");
-	ft_print_combn(5);
-	printf("\n");
-	ft_print_combn(1);
-	printf("\n");
-	ft_print_combn(9);
-	printf("\n");
-	return (0);
+	int i;
+	int j;
+	int tmp;
+
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size - i - 1)
+		{
+			if (*(tab + j) > *(tab + j + 1))
+			{
+				tmp = *(tab + j);
+				*(tab + j) = *(tab + j + 1);
+				*(tab + j + 1) = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
 }

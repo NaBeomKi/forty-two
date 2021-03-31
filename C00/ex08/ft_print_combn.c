@@ -6,34 +6,47 @@
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 23:40:00 by bna               #+#    #+#             */
-/*   Updated: 2021/03/30 01:03:00 by bna              ###   ########.fr       */
+/*   Updated: 2021/04/01 00:50:07 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	print_num(init, end)
+void	print_num(char *arr, int len)
 {
-	int j = init;
-	while (++j <= end)
+	int i;
+
+	i = 0;
+	while (i < len)
 	{
-		if (j < '9' + 1)
-		{
-			print_num(j, end - 1);
-		}
-		else
-		{
-			write(1, &j, 1);
-		}
+		write(1, arr + i, 1);
+		i++;
 	}
+	if (!(*(arr + len - 1) == '9' && *arr == '9' + 1 - len))
+		write(1, ", ", 1);
+}
+
+void	init_arr(char *arr, int index, int len, char result)
+{
+	char current;
+
+	current = result;
+	if (index != len - 1)
+	{
+		init_arr(arr, index + 1, len, result + 1);
+	}
+	while (result < '9' + 1)
+	{
+		*(arr + index) = result;
+		print_num(arr, len);
+		result++;
+	}
+	init_arr(arr, index - 1, len, current + 1);
 }
 
 void	ft_print_combn(int n)
 {
-	int end;
-	int i;
-	
-	end = '0' + n;
-	i = '0' - 1;
-	print_num(i, end);
+	char	arr[n];
+
+	init_arr(arr, 0, n, '0');
 }
