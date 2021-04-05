@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/04 00:47:20 by bna               #+#    #+#             */
-/*   Updated: 2021/04/06 03:08:17 by bna              ###   ########.fr       */
+/*   Created: 2021/04/05 17:00:13 by bna               #+#    #+#             */
+/*   Updated: 2021/04/06 03:09:32 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int		i;
-	int		j;
-
-	if (!*to_find)
-		return (str);
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (str[i])
+	while (dest[i])
 	{
-		if (str[i] == to_find[0])
-		{
-			j = 0;
-			while (to_find[j])
-			{
-				if (str[i + j] != to_find[j])
-				{
-					break ;
-				}
-				j++;
-			}
-			if (!to_find[j])
-				return (&str[i]);
-		}
 		i++;
 	}
-	return (0);
+	j = 0;
+	while (j + 1 < size && src[j])
+	{
+		dest[i++] = src[j++];
+	}
+	while (src[j])
+	{
+		j++;
+	}
+	dest[i] = 0;
+	return (j);
 }

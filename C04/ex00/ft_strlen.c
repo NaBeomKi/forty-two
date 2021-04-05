@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/30 00:12:19 by bna               #+#    #+#             */
-/*   Updated: 2021/03/31 16:25:46 by bna              ###   ########.fr       */
+/*   Created: 2021/04/06 01:59:36 by bna               #+#    #+#             */
+/*   Updated: 2021/04/06 01:59:37 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	ft_print_combn(int n);
-
-int		main(void)
+int     ft_strlen(char *str)
 {
-	ft_print_combn(0);
-	printf("\n");
-	ft_print_combn(5);
-	printf("\n");
-	ft_print_combn(1);
-	printf("\n");
-	ft_print_combn(9);
-	printf("\n");
-	return (0);
+    int i;
+
+    i = 0;
+    while (str[i])
+    {
+        i++;
+    }
+    return (i);
 }
