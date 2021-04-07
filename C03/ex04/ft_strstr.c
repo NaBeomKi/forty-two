@@ -6,7 +6,7 @@
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 00:47:20 by bna               #+#    #+#             */
-/*   Updated: 2021/04/06 03:08:17 by bna              ###   ########.fr       */
+/*   Updated: 2021/04/07 16:01:42 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strstr(char *str, char *to_find)
 
 	if (!*to_find)
 		return (str);
-
 	i = 0;
 	while (str[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 00:10:32 by bna               #+#    #+#             */
-/*   Updated: 2021/04/05 23:59:13 by bna              ###   ########.fr       */
+/*   Updated: 2021/04/07 13:03:42 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n)
 	unsigned int	i;
 
 	i = 0;
-	while (i < n)
+	while ((*(s1 + i) || *(s2 + i)) && i < n)
 	{
 		if (*(s1 + i) != *(s2 + i))
 			return (*(s1 + i) - *(s2 + i));

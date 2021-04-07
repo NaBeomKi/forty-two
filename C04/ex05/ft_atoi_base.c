@@ -1,16 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 21:13:48 by bna               #+#    #+#             */
-/*   Updated: 2021/04/08 02:51:44 by bna              ###   ########.fr       */
+/*   Created: 2021/04/08 02:44:22 by bna               #+#    #+#             */
+/*   Updated: 2021/04/08 05:46:02 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+int     is_space(char *c)
+{
+    if (*c == ' ' || *c == '\n' || *c == '\t' || *c == '\v' || *c == '\f' || *c == '\r')
+        return (1);
+    return (0);
+}
 
 int     vaild_num(char *base)
 {
@@ -20,7 +25,7 @@ int     vaild_num(char *base)
     i = 0;
     while (base[i])
     {
-        if (base[i] == '+' || base[i] == '-')
+        if (base[i] == '+' || base[i] == '-' || is_space(base[i]))
             return (0);
         if (base[i])
         {
@@ -39,27 +44,11 @@ int     vaild_num(char *base)
     return (i);
 }
 
-void    putnbr_print(long nbr, char *base, int base_num)
-{
-    if (nbr >= 0)
-    {
-        if ((nbr / base_num) > 0)
-            putnbr_print(nbr / base_num, base, base_num);
-    }
-    else if (nbr < 0)
-    {
-        write(1, "-", 1);
-        putnbr_print((nbr / base_num) * (-1), base, base_num);
-    }
-    write(1, &base[(nbr % base_num)], 1);
-}
-
-void    ft_putnbr_base(int nbr, char *base)
+int ft_atoi_base(char *str, char *base)
 {
     int base_num;
 
     base_num = vaild_num(base);
     if (!base_num)
-        return;
-    putnbr_print((long)nbr, base, base_num);
+        return (0);
 }
