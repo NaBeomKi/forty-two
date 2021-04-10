@@ -6,44 +6,38 @@
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 02:01:34 by bna               #+#    #+#             */
-/*   Updated: 2021/04/06 02:03:35 by bna              ###   ########.fr       */
+/*   Updated: 2021/04/10 14:25:09 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	print_number(int is_positive, int index, char arr[])
+void	print_num(int nb)
 {
-	if (!is_positive)
-		write(1, "-", 2);
-	while (--index >= 0)
-	{
-		if (arr[0] == 0)
-		{
-			write(1, "0", 1);
-			break ;
-		}
-		write(1, &arr[index], 1);
-	}
+	int result;
+
+	if (nb == 0)
+		return ;
+	print_num(nb / 10);
+	result = (nb % 10) + '0';
+	write(1, &result, 1);
 }
 
 void	ft_putnbr(int nb)
 {
-	char	arr[10];
-	int		index;
-	int		is_positive;
+	int result;
 
-	is_positive = nb < 0 ? 0 : 1;
-	index = 0;
-	while (index < 10)
+	if (nb < 0)
 	{
-		if (nb < 0)
-			arr[index++] = (nb % 10) * (-1) + '0';
-		else if (nb == 0)
-			arr[index++] = nb;
-		else
-			arr[index++] = (nb % 10) + '0';
-		nb = nb / 10;
+		write(1, "-", 1);
+		print_num((nb / 10) * (-1));
+		result = (nb % 10) * (-1);
 	}
-	print_number(is_positive, index, arr);
+	else
+	{
+		print_num(nb / 10);
+		result = nb % 10;
+	}
+	result += '0';
+	write(1, &result, 1);
 }

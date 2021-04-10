@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 01:59:41 by bna               #+#    #+#             */
-/*   Updated: 2021/04/10 14:23:22 by bna              ###   ########.fr       */
+/*   Created: 2021/04/10 15:46:05 by bna               #+#    #+#             */
+/*   Updated: 2021/04/10 21:43:36 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putstr(char *str)
+int     ft_fibonacci(int index)
 {
-	while (*str)
-		write(1, str++, 1);
+    int result;
+
+    if (index < 0)
+        return (-1);
+    if (index == 0)
+        return (0);
+    if (index == 1)
+        return (1);
+    return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }

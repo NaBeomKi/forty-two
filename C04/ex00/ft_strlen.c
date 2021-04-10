@@ -6,18 +6,16 @@
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 01:59:36 by bna               #+#    #+#             */
-/*   Updated: 2021/04/06 01:59:37 by bna              ###   ########.fr       */
+/*   Updated: 2021/04/10 14:22:47 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_strlen(char *str)
+int		ft_strlen(char *str)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (str[i])
-    {
-        i++;
-    }
-    return (i);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

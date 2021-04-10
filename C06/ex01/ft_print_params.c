@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 01:59:41 by bna               #+#    #+#             */
-/*   Updated: 2021/04/10 14:23:22 by bna              ###   ########.fr       */
+/*   Created: 2021/04/09 00:10:38 by bna               #+#    #+#             */
+/*   Updated: 2021/04/11 05:02:35 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+int		main(int argc, char *argv[])
 {
-	while (*str)
-		write(1, str++, 1);
+	int i;
+
+	i = 1;
+	if (argc == i)
+		return (0);
+	while (i < argc)
+	{
+		while (*argv[i])
+		{
+			write(1, argv[i]++, 1);
+		}
+		write(1, "\n", 1);
+		i++;
+	}
+	return (0);
 }
