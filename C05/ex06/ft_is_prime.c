@@ -6,18 +6,18 @@
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 16:18:32 by bna               #+#    #+#             */
-/*   Updated: 2021/04/11 16:18:34 by bna              ###   ########.fr       */
+/*   Updated: 2021/04/11 16:47:52 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int     ft_is_prime(int nb)
 {
-    int i;
+    unsigned long long i;
 
     i = 2;
     if (nb < 2)
         return (0);
-    while (i < nb)
+    while (i * i < (unsigned long long)nb)
     {
         if (!(nb % i))
             return (0);
