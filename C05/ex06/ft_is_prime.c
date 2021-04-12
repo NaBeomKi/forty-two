@@ -5,23 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/11 16:18:32 by bna               #+#    #+#             */
-/*   Updated: 2021/04/11 16:47:52 by bna              ###   ########.fr       */
+/*   Created: 2021/04/12 09:38:19 by bna               #+#    #+#             */
+/*   Updated: 2021/04/12 11:49:52 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_is_prime(int nb)
+int		ft_is_prime(int nb)
 {
-    unsigned long long i;
+	unsigned long long i;
 
-    i = 2;
-    if (nb < 2)
-        return (0);
-    while (i * i < (unsigned long long)nb)
-    {
-        if (!(nb % i))
-            return (0);
-        i++;
-    }
-    return (1);
+	i = 2;
+	if (nb < 2)
+		return (0);
+	while (i * i <= (unsigned long long)nb)
+	{
+		if (!(nb % i))
+			return (0);
+		i++;
+	}
+	return (1);
 }

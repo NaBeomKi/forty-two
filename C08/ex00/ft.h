@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/10 15:46:05 by bna               #+#    #+#             */
-/*   Updated: 2021/04/12 11:47:56 by bna              ###   ########.fr       */
+/*   Created: 2021/04/12 14:30:39 by bna               #+#    #+#             */
+/*   Updated: 2021/04/12 16:20:42 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_fibonacci(int index)
-{
-	if (index < 0)
-		return (-1);
-	if (index == 0)
-		return (0);
-	if (index == 1)
-		return (1);
-	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
-}
+#ifndef __FT_H__
+#define __FT_H__
+void    ft_putchar(char c);
+void    ft_swap(int *a, int *b);
+void    ft_putstr(char *str);
+int     ft_strlen(char *str);
+int     ft_strcmp(char *s1, char *s2);
+#endif

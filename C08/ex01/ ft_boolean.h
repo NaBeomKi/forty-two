@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*    ft_boolean.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/10 15:46:05 by bna               #+#    #+#             */
-/*   Updated: 2021/04/12 11:47:56 by bna              ###   ########.fr       */
+/*   Created: 2021/04/12 15:18:57 by bna               #+#    #+#             */
+/*   Updated: 2021/04/13 02:17:50 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_fibonacci(int index)
-{
-	if (index < 0)
-		return (-1);
-	if (index == 0)
-		return (0);
-	if (index == 1)
-		return (1);
-	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
-}
+#ifndef __FT_BOOLEAN_H__
+#define __FT_BOOLEAN_H__
+#define EVEN_MSG    "I have an even number of arguments.\n"
+#define ODD_MSG    "I have an odd number of arguments.\n"
+#define TRUE    1
+#define FALSE    0
+#define EVEN(x)     x % 2 == 0 ? 1 : 0
+#define SUCCESS     0
+#include <unistd.h>
+#include <stdbool.h>
+typedef bool t_bool;
+void    ft_putstr(char *str);
+t_bool  ft_is_even(int nbr);
+#endif
