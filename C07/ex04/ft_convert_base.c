@@ -6,7 +6,7 @@
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 19:53:29 by bna               #+#    #+#             */
-/*   Updated: 2021/04/13 00:30:36 by bna              ###   ########.fr       */
+/*   Updated: 2021/04/14 15:58:12 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	if (!vaild(base_from) || !vaild(base_to))
 		return (0);
 	num = ft_atoi_base(nbr, base_from);
+	g_sign = num < 0 ? -1 : 1;
 	ft_putnbr_base(num, base_to);
 	return (g_res);
 }

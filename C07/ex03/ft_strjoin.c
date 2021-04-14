@@ -6,7 +6,7 @@
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:56:48 by bna               #+#    #+#             */
-/*   Updated: 2021/04/12 22:48:30 by bna              ###   ########.fr       */
+/*   Updated: 2021/04/15 01:28:13 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,24 @@ int		ft_strlen(char *str)
 
 char	*ft_strcat(char *dest, char *src)
 {
-	while (*src)
-		*dest++ = *src++;
-	return (dest);
-}
-
-char	*ft_strjoin(int size, char **strs, char *sep)
-{
-	char	*res;
-	char	*tmp;
-	int		i;
-	int		j;
-	int		total;
+	int i;
 
 	i = 0;
-	total = 0;
-	while (i < size)
-		total += ft_strlen(strs[i++]);
-	if (!size)
-		total += ft_strlen(sep) * (size - 1);
-	res = malloc((sizeof(char) * total) + 1);
-	tmp = res;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return (dest + i);
+}
+
+void	loop(int size, char *res, char **strs, char *sep)
+{
+	int		j;
+	char	*tmp;
+
 	j = 0;
+	tmp = res;
 	while (j < size)
 	{
 		tmp = ft_strcat(tmp, strs[j]);
@@ -54,5 +50,24 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		j++;
 	}
 	*tmp = 0;
+}
+
+char	*ft_strjoin(int size, char **strs, char *sep)
+{
+	char	*res;
+	int		i;
+	int		j;
+	int		total;
+
+	i = 0;
+	total = 0;
+	while (i < size)
+		total += (ft_strlen(strs[i++]) + ft_strlen(sep));
+	total -= ft_strlen(sep);
+	total = !size ? 0 : total;
+	res = (char*)malloc((sizeof(char) * total) + 1);
+	if (!res)
+		return (0);
+	loop(size, res, strs, sep);
 	return (res);
 }

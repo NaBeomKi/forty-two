@@ -6,7 +6,7 @@
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 19:53:38 by bna               #+#    #+#             */
-/*   Updated: 2021/04/13 00:23:07 by bna              ###   ########.fr       */
+/*   Updated: 2021/04/14 15:35:04 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,20 @@ int		ft_atoi_base(char *str, char *base)
 {
 	int base_num;
 	int result;
+	int sign;
 
 	base_num = ft_strlen(base);
-	g_sign = 1;
+	sign = 1;
 	result = 0;
 	while (is_space(str))
 		str++;
 	while (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
-			g_sign *= -1;
+			sign *= -1;
 		str++;
 	}
 	result = find_num(str, base, base_num);
-	result *= g_sign;
+	result *= sign;
 	return (result);
 }

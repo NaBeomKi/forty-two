@@ -6,15 +6,16 @@
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 02:28:08 by bna               #+#    #+#             */
-/*   Updated: 2021/04/13 02:39:41 by bna              ###   ########.fr       */
+/*   Updated: 2021/04/14 17:46:46 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FT_POINT_H__
-#define __FT_POINT_H__
-typedef struct s_point
+#ifndef FT_POINT_H
+# define FT_POINT_H
+
+typedef struct	s_point
 {
-    int x;
-    int y;
-}t_point;
+	int x;
+	int y;
+}				t_point;
 #endif

@@ -6,18 +6,18 @@
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 02:05:24 by bna               #+#    #+#             */
-/*   Updated: 2021/04/14 02:22:14 by bna              ###   ########.fr       */
+/*   Updated: 2021/04/14 18:02:12 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
 #include <unistd.h>
 
-void    ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-    while (*str)
-        write(1, str++, 1);
-    write(1, "\n", 1);
+	while (*str)
+		write(1, str++, 1);
+	write(1, "\n", 1);
 }
 
 void	print_num(int nb)
@@ -51,16 +51,16 @@ void	ft_putnbr(int nb)
 	write(1, "\n", 1);
 }
 
-void    ft_show_tab(struct s_stock_str *par)
+void	ft_show_tab(struct s_stock_str *par)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (par[i].str)
-    {
-        ft_putstr(par[i].str);
-        ft_putnbr(par[i].size);
-        ft_putstr(par[i].copy);
-        i++;
-    }
+	i = 0;
+	while (par[i].str)
+	{
+		ft_putstr(par[i].str);
+		ft_putnbr(par[i].size);
+		ft_putstr(par[i].copy);
+		i++;
+	}
 }

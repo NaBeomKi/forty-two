@@ -6,11 +6,11 @@
 /*   By: bna <bna@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 02:27:23 by bna               #+#    #+#             */
-/*   Updated: 2021/04/13 02:27:24 by bna              ###   ########.fr       */
+/*   Updated: 2021/04/14 16:20:42 by bna              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FT_ABS_H__
-#define __FT_ABS_H__
-#define ABS(Value)  (Value < 0 ? Value * -1 : Value)
+#ifndef FT_ABS_H
+# define FT_ABS_H
+# define ABS(Value)  (Value < 0 ? Value * -1 : Value)
 #endif
